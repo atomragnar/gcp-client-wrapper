@@ -44,6 +44,13 @@ type RequestWrapper[T ClientInterface, V proto.Message, R proto.Message] struct 
 	requestFunc RequestFunc[T, V, R]
 }
 
+func NewRequest[T ClientInterface, V proto.Message, R proto.Message](req R, fn RequestFunc[T, V, R]) *RequestWrapper[T, V, R] {
+	return &RequestWrapper[T, V, R]{
+		Req:         req,
+		requestFunc: fn,
+	}
+}
+
 func (rw *RequestWrapper[T, V, R]) MakeRequest(c ClientWrapper[T], h ApiResponseHandler) error {
 	client, err := c.New()
 	if err != nil {
