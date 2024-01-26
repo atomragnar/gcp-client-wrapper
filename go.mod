@@ -1,8 +1,8 @@
-module github.com/atomragnar/gcp-client-wrapper
+module github.com/atomragnar/gcw
 
-go 1.21.6
+go 1.21
 
 require (
-	google.golang.org/api v0.156.0 // indirect
-	google.golang.org/protobuf v1.32.0 // indirect
+	google.golang.org/api v0.156.0
+	google.golang.org/protobuf v1.32.0
 )
