@@ -9,7 +9,7 @@ import (
 )
 
 type ApiResponseHandler interface {
-	HandleResponse(resp proto.Message)
+	HandleResponse(proto.Message)
 }
 
 type ClientInterface interface {
